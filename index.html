@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Four Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="background-animation"></div>
+
+    <div class="container">
+
+        <header>
+            <h1>🎮 Connect Four Pro</h1>
+            <p>Modern Strategy Game</p>
+        </header>
+
+        <div class="controls">
+
+            <div class="scoreboard">
+                <div class="score-card">
+                    <h3>🔴 Red</h3>
+                    <span id="red-score">0</span>
+                </div>
+
+                <div class="score-card">
+                    <h3>🤝 Draws</h3>
+                    <span id="draw-score">0</span>
+                </div>
+
+                <div class="score-card">
+                    <h3>🟡 Yellow</h3>
+                    <span id="yellow-score">0</span>
+                </div>
+            </div>
+
+            <div class="status-panel">
+
+                <div class="turn-box">
+                    Current Turn:
+                    <span id="current-player" class="red-player">
+                        🔴 Red
+                    </span>
+                </div>
+
+                <div class="timer-box">
+                    ⏱ Time Left:
+                    <span id="timer">15</span>s
+                </div>
+
+            </div>
+
+            <div class="button-group">
+                <button id="restart-btn">
+                    🔄 Restart
+                </button>
+
+                <button id="theme-toggle">
+                    🌙 Theme
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Connect Four Board -->
+        <div class="board-wrapper">
+
+            <div id="board" class="board">
+
+                <!-- Row 1 -->
+                <div class="cell" data-row="0" data-col="0"></div>
+                <div class="cell" data-row="0" data-col="1"></div>
+                <div class="cell" data-row="0" data-col="2"></div>
+                <div class="cell" data-row="0" data-col="3"></div>
+                <div class="cell" data-row="0" data-col="4"></div>
+                <div class="cell" data-row="0" data-col="5"></div>
+                <div class="cell" data-row="0" data-col="6"></div>
+
+                <!-- Row 2 -->
+                <div class="cell" data-row="1" data-col="0"></div>
+                <div class="cell" data-row="1" data-col="1"></div>
+                <div class="cell" data-row="1" data-col="2"></div>
+                <div class="cell" data-row="1" data-col="3"></div>
+                <div class="cell" data-row="1" data-col="4"></div>
+                <div class="cell" data-row="1" data-col="5"></div>
+                <div class="cell" data-row="1" data-col="6"></div>
+
+                <!-- Row 3 -->
+                <div class="cell" data-row="2" data-col="0"></div>
+                <div class="cell" data-row="2" data-col="1"></div>
+                <div class="cell" data-row="2" data-col="2"></div>
+                <div class="cell" data-row="2" data-col="3"></div>
+                <div class="cell" data-row="2" data-col="4"></div>
+                <div class="cell" data-row="2" data-col="5"></div>
+                <div class="cell" data-row="2" data-col="6"></div>
+
+                <!-- Row 4 -->
+                <div class="cell" data-row="3" data-col="0"></div>
+                <div class="cell" data-row="3" data-col="1"></div>
+                <div class="cell" data-row="3" data-col="2"></div>
+                <div class="cell" data-row="3" data-col="3"></div>
+                <div class="cell" data-row="3" data-col="4"></div>
+                <div class="cell" data-row="3" data-col="5"></div>
+                <div class="cell" data-row="3" data-col="6"></div>
+
+                <!-- Row 5 -->
+                <div class="cell" data-row="4" data-col="0"></div>
+                <div class="cell" data-row="4" data-col="1"></div>
+                <div class="cell" data-row="4" data-col="2"></div>
+                <div class="cell" data-row="4" data-col="3"></div>
+                <div class="cell" data-row="4" data-col="4"></div>
+                <div class="cell" data-row="4" data-col="5"></div>
+                <div class="cell" data-row="4" data-col="6"></div>
+
+                <!-- Row 6 -->
+                <div class="cell" data-row="5" data-col="0"></div>
+                <div class="cell" data-row="5" data-col="1"></div>
+                <div class="cell" data-row="5" data-col="2"></div>
+                <div class="cell" data-row="5" data-col="3"></div>
+                <div class="cell" data-row="5" data-col="4"></div>
+                <div class="cell" data-row="5" data-col="5"></div>
+                <div class="cell" data-row="5" data-col="6"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Winner Modal -->
+    <div id="winner-modal" class="modal">
+
+        <div class="modal-content">
+
+            <h2 id="winner-text">
+                🎉 Winner!
+            </h2>
+
+            <button id="play-again">
+                Play Again
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
